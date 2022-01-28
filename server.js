@@ -1,9 +1,21 @@
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
-var dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv');
+//configuring the http server using express
+const express = require('express');
+// const bodyparser = require("body-parser");
+// const path = require('path');
+
+// set the port
+var PORT = process.env.PORT || 8000;
+const app = express();
+app.get('/', (req, res)=> {
+    res.send(' It worked!!');
+  })
+
 // Connecting to the database
+dotenv.config();
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
@@ -14,3 +26,9 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+// parse request to body-parser
+// app.use(bodyparser.urlencoded({ extended : true}))
+
+
+// show results on localhost
+app.listen(PORT, ()=>{console.log(`Server is running on http://localhost:${PORT}`)});
