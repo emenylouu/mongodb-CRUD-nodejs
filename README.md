@@ -1,2 +1,2 @@
 # mongodb_crud
-crud function to user later to load data on the IC
+crud function to use later to load data on the IC

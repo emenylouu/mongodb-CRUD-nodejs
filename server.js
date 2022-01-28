@@ -4,15 +4,23 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 //configuring the http server using express
 const express = require('express');
-// const bodyparser = require("body-parser");
-// const path = require('path');
-
-// set the port
-var PORT = process.env.PORT || 8000;
 const app = express();
+app.use(express.json())
+
+// adding routes
+var routes = require('./server/routes/router')
+app.use('/router',routes)
+
+
+
 app.get('/', (req, res)=> {
     res.send(' It worked!!');
   })
+
+// set the port
+var PORT = process.env.PORT || 8000;
+
+
 
 // Connecting to the database
 dotenv.config();
@@ -26,8 +34,7 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-// parse request to body-parser
-// app.use(bodyparser.urlencoded({ extended : true}))
+
 
 
 // show results on localhost

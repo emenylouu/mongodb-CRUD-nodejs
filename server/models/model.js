@@ -1,5 +1,9 @@
+//get access to mongoose
 const mongoose = require('mongoose');
-var schema = new mongoose.Schema({
+
+
+//create the schema
+var userSchema = new mongoose.Schema({
         username : {
             type: 'string',
             required: true
@@ -8,10 +12,9 @@ var schema = new mongoose.Schema({
         name : {
             type: String,
             required: true,
-            unique: true
+           
         },
         birthday : Date,
    
 })
-const Userdb = mongoose.model('User', schema);
-module.exports = Userdb;
+module.exports = mongoose.model('customers',userSchema)
