@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "mongodb_crud",
+  "description": "crud application",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emenylouu/mongodb_crud.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "ic"
+  ],
+  "author": "Emeny Louhichi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emenylouu/mongodb_crud/issues"
+  },
+  "homepage": "https://github.com/emenylouu/mongodb_crud#readme"
+}
