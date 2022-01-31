@@ -1,9 +1,33 @@
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
-var dotenv = require('dotenv');
+const dotenv = require('dotenv');
+//configuring the http server using express
+const express = require('express');
+const app = express();
+app.use(express.json())
+
+// adding routes
+var routes = require('./server/routes/router')
+app.use('/data',routes)
+
+
+
+app.get('/', (req, res)=> {
+    res.send(' Test Endpoints on postman!!');
+  })
+
+// set the port
+var PORT = process.env.PORT || 8000;
+
+
+
+/** 
+ 
+ Connecting to the database 
+
+ **/ 
 dotenv.config();
-// Connecting to the database
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
@@ -14,3 +38,8 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+
+
+
+// show results on localhost
+app.listen(PORT, ()=>{console.log(`Server is running on http://localhost:${PORT}`)});
