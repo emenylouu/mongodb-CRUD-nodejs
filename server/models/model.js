@@ -17,4 +17,4 @@ var userSchema = new mongoose.Schema({
         birthday : Date,
    
 })
-module.exports = mongoose.model('customers',userSchema)
+module.exports = mongoose.model('users',userSchema)
