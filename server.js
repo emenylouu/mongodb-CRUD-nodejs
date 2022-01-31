@@ -14,7 +14,7 @@ app.use('/customers',routes)
 
 
 app.get('/', (req, res)=> {
-    res.send(' It worked!!');
+    res.send(' Test Endpoints on postman!!');
   })
 
 // set the port
@@ -22,7 +22,11 @@ var PORT = process.env.PORT || 8000;
 
 
 
-// Connecting to the database
+/** 
+ 
+ Connecting to the database 
+
+ **/ 
 dotenv.config();
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url, {
