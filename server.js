@@ -9,7 +9,7 @@ app.use(express.json())
 
 // adding routes
 var routes = require('./server/routes/router')
-app.use('/router',routes)
+app.use('/customers',routes)
 
 
 
