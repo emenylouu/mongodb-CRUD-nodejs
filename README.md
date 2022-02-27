@@ -1,2 +1,2 @@
-# IC_M1
+# CRUD calls to a Mongo DB database with nodejs
 
